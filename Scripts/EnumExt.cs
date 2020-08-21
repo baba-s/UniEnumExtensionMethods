@@ -54,7 +54,7 @@ namespace Kogane
 		public static T Next<T>( this T self )
 		{
 			var intValue  = Convert.ToInt32( self );
-			var nextValue = Mathf.Min( Enum.GetValues( typeof( T ) ).Length, intValue + 1 );
+			var nextValue = Mathf.Min( Enum.GetValues( typeof( T ) ).Length - 1, intValue + 1 );
 			var enumValue = Enum.ToObject( typeof( T ), nextValue );
 
 			return ( T ) enumValue;
